@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D08C4CC21E51D35D0042FB30 /* MBR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D08C4CBE1E51D35D0042FB30 /* MBR.cpp */; };
+		D08C4CC31E51D35D0042FB30 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */; };
+		OBJ_28 /* OpenCVWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* OpenCVWrapperTests.swift */; };
+		OBJ_30 /* OpenCVWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* OpenCVWrapper.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D08C4CBA1E51D2E40042FB30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_16;
+			remoteInfo = OpenCVWrapper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D08C4CBB1E51D35D0042FB30 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
+		D08C4CBC1E51D35D0042FB30 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
+		D08C4CBD1E51D35D0042FB30 /* happiness.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = happiness.xml; sourceTree = "<group>"; };
+		D08C4CBE1E51D35D0042FB30 /* MBR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBR.cpp; sourceTree = "<group>"; };
+		D08C4CBF1E51D35D0042FB30 /* MBR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MBR.hpp; sourceTree = "<group>"; };
+		D08C4CC01E51D35D0042FB30 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		OBJ_12 /* OpenCVWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVWrapperTests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* OpenCVWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OpenCVWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_15 /* OpenCVWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = OpenCVWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_30 /* OpenCVWrapper.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_11 /* OpenCVWrapperTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* OpenCVWrapperTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* OpenCVWrapperTests.swift */,
+			);
+			name = OpenCVWrapperTests;
+			path = Tests/OpenCVWrapperTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* OpenCVWrapper.framework */,
+				OBJ_15 /* OpenCVWrapperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				OBJ_13 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* OpenCVWrapper */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		OBJ_8 /* OpenCVWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				D08C4CBB1E51D35D0042FB30 /* haarcascade_eye_tree_eyeglasses.xml */,
+				D08C4CBC1E51D35D0042FB30 /* haarcascade_frontalface_alt.xml */,
+				D08C4CBD1E51D35D0042FB30 /* happiness.xml */,
+				D08C4CBE1E51D35D0042FB30 /* MBR.cpp */,
+				D08C4CBF1E51D35D0042FB30 /* MBR.hpp */,
+				D08C4CC01E51D35D0042FB30 /* OpenCVWrapper.h */,
+				D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */,
+			);
+			name = OpenCVWrapper;
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		OBJ_16 /* OpenCVWrapper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "OpenCVWrapper" */;
+			buildPhases = (
+				OBJ_20 /* Sources */,
+				OBJ_22 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenCVWrapper;
+			productName = OpenCVWrapper;
+			productReference = OBJ_14 /* OpenCVWrapper.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		OBJ_23 /* OpenCVWrapperTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_24 /* Build configuration list for PBXNativeTarget "OpenCVWrapperTests" */;
+			buildPhases = (
+				OBJ_27 /* Sources */,
+				OBJ_29 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_31 /* PBXTargetDependency */,
+			);
+			name = OpenCVWrapperTests;
+			productName = OpenCVWrapperTests;
+			productReference = OBJ_15 /* OpenCVWrapperTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					OBJ_16 = {
+						LastSwiftMigration = 0820;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "OpenCVWrapper" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_13 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				OBJ_16 /* OpenCVWrapper */,
+				OBJ_23 /* OpenCVWrapperTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				D08C4CC21E51D35D0042FB30 /* MBR.cpp in Sources */,
+				D08C4CC31E51D35D0042FB30 /* OpenCVWrapper.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_27 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_28 /* OpenCVWrapperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_31 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_16 /* OpenCVWrapper */;
+			targetProxy = D08C4CBA1E51D2E40042FB30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OpenCVWrapper.xcodeproj/OpenCVWrapper_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = OpenCVWrapper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGET_NAME = OpenCVWrapper;
+			};
+			name = Debug;
+		};
+		OBJ_19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OpenCVWrapper.xcodeproj/OpenCVWrapper_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = OpenCVWrapper;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SWIFT_VERSION = 3.0;
+				TARGET_NAME = OpenCVWrapper;
+			};
+			name = Release;
+		};
+		OBJ_25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OpenCVWrapper.xcodeproj/OpenCVWrapperTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = OpenCVWrapperTests;
+			};
+			name = Debug;
+		};
+		OBJ_26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = OpenCVWrapper.xcodeproj/OpenCVWrapperTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				TARGET_NAME = OpenCVWrapperTests;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_17 /* Build configuration list for PBXNativeTarget "OpenCVWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_18 /* Debug */,
+				OBJ_19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "OpenCVWrapper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_24 /* Build configuration list for PBXNativeTarget "OpenCVWrapperTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_25 /* Debug */,
+				OBJ_26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-
 #import <opencv2/highgui/cap_ios.h>
+#import <EmotionCore/EmotionCore-Swift.h>
 
 #import "opencv2/objdetect.hpp"
 #import "opencv2/highgui.hpp"
@@ -18,7 +18,6 @@
 typedef struct VectorOfCvRects *VectorOfCvRect;
 typedef struct CvMats *CvMatrix;
 
-@class DetectedResult;
 
 @interface OpenCVWrapper : NSObject
 
@@ -28,8 +27,6 @@ typedef struct CvMats *CvMatrix;
 //+ (void)detectFace:(UIImage*)image;
 
 //+ (UIImage *)recognizeFace:(UIImage *)image;
-
-
 
 - (DetectedResult *)detectAndDisplay:(UIImage*)input;
 

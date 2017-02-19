@@ -8,7 +8,6 @@
 
 #include "OpenCVWrapper.h"
 #import <opencv2/highgui/ios.h>
-#import "OpenCVTest-Swift.h"
 
 using namespace cv;
 using namespace std;

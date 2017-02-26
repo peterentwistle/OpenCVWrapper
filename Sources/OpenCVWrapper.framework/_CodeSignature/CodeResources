@@ -4,6 +4,14 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		EhQCzy8OejAYd6jqdj66YPUAxPA=
+		</data>
+		<key>Headers/OpenCVWrapper.h</key>
+		<data>
+		oo7k0FeHKG0Y9kxcE58WJefPb58=
+		</data>
 		<key>Info.plist</key>
 		<data>
 		wiHS66GTUanDTN6kAqrmYjLYDAg=
@@ -15,6 +23,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>Headers/OpenCVWrapper.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			oo7k0FeHKG0Y9kxcE58WJefPb58=
+			</data>
+			<key>hash2</key>
+			<data>
+			peT4992/GpenXw0akyrCrOtBK/GxZap2Px9l0depx18=
+			</data>
+		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>

@@ -1,0 +1,6 @@
+framework module OpenCVWrapper {
+    umbrella header "OpenCVWrapper.h"
+    
+    export *
+    module * { export * }
+}

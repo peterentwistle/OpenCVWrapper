@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "45A417573C890E79E73B84BDE6C1CA7660324E9E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "AF3DA699A657866DD0D68EA7A39A7B2BBD79685C" : 9223372036854775807,
+    "45A417573C890E79E73B84BDE6C1CA7660324E9E" : 9223372036854775807,
     "A981A463BFBEF67A9BF297FE6EF118461C9EFC4D" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "943CF985-71BD-4ACB-905C-0048A8076F6D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "AF3DA699A657866DD0D68EA7A39A7B2BBD79685C" : "OpenCVWrapper\/Packages\/EmotionCore-1.0.3\/",
+    "45A417573C890E79E73B84BDE6C1CA7660324E9E" : "OpenCVWrapper\/",
     "A981A463BFBEF67A9BF297FE6EF118461C9EFC4D" : "OpenCVWrapper\/Packages\/OpenCVFramework-1.0.0\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "OpenCVWrapper",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "OpenCVWrapper.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/peterentwistle\/OpenCVWrapper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "45A417573C890E79E73B84BDE6C1CA7660324E9E"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/peterentwistle\/OpenCVFramework.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",

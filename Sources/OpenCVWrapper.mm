@@ -93,12 +93,21 @@ typedef struct CvMats {
     return resultImage;
 }
 */
+
+void rotate90(cv::Mat &mat) {
+    // Rotate matrix 90 degrees clockwise
+    transpose(mat, mat);
+    flip(mat, mat, 1);
+}
+
 - (DetectedResult *)detectAndDisplay:(UIImage*)input {
     std::vector<cv::Rect> faces;
     Mat frame_gray;
     Mat frame;
     
     UIImageToMat(input, frame);
+    
+    rotate90(frame);
     
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
     equalizeHist(frame_gray, frame_gray);

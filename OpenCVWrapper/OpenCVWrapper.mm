@@ -107,7 +107,7 @@ void rotate90(cv::Mat &mat) {
     
     UIImageToMat(input, frame);
     
-    rotate90(frame);
+    //rotate90(frame);
     
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
     equalizeHist(frame_gray, frame_gray);

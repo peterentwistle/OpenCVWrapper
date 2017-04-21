@@ -26,6 +26,7 @@ CascadeClassifier fear_cascade;
 CascadeClassifier neutral_cascade;
 CascadeClassifier sadness_cascade;
 CascadeClassifier surprise_cascade;
+CascadeClassifier disgust_cascade;
 
 //cv::CascadeClassifier cascade;
 
@@ -68,6 +69,9 @@ typedef struct CvMats {
 
     // Surprise
     [self loadCascadeClassifier: surprise_cascade fileName:@"surprise"];
+    
+    // Disgust
+    [self loadCascadeClassifier: disgust_cascade fileName:@"disgust"];
     
     return self;
 }
@@ -115,9 +119,9 @@ void rotate90(cv::Mat &mat) {
         std::vector<cv::Rect> eyes;
         
         // Detect emotions
-        detectedEmotion = [self detectHappiness:faceROI];
+        detectedEmotion = [self detectEmotion:faceROI];
         
-        //-- In each face, detect eyes
+        // In each face, detect eyes
         eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 2, 0 |CASCADE_SCALE_IMAGE, cv::Size(30, 30));
         
         for (size_t j = 0; j < eyes.size(); j++) {
@@ -133,24 +137,79 @@ void rotate90(cv::Mat &mat) {
     return result;
 }
 
-- (DetectedEmotion *)detectHappiness:(Mat)frame {
-    std::vector<cv::Rect> happiness_faces;
-    
-    happiness_cascade.detectMultiScale(frame, happiness_faces, 1.1, 2, 0|CASCADE_SCALE_IMAGE, cv::Size(30, 30));
-    
-    for (size_t i = 0; i < happiness_faces.size(); i++) {
-        printf("Happiness detected! At x: %d, y: %d width: %d height: %d \n", happiness_faces[i].x, happiness_faces[i].y, happiness_faces[i].width, happiness_faces[i].height);
-    }
-    
-    //frame: UIImage, emotion: Emotion, emotionFace: UIImage
+- (DetectedEmotion *)detectEmotion:(Mat)frame {
+    std::vector<cv::Rect> emotion_faces;
+
     Emotion emotion = EmotionNone;
     
-    if (happiness_faces.size() > 0) {
-        emotion = EmotionHappiness;
+    NSArray *emotions = @[@"happiness", @"anger", @"contempt", @"fear", @"neutral", @"sadness", @"surprise", @"disgust"];
+    
+    for (NSString *emotionName in emotions) {
+        
+        CascadeClassifier &cascade = [self getClassifier: emotionName];
+        
+        cascade.detectMultiScale(frame, emotion_faces, 1.1, 2, 0|CASCADE_SCALE_IMAGE, cv::Size(30, 30));
+        
+        for (size_t i = 0; i < emotion_faces.size(); i++) {
+            printf("%s detected! At x: %d, y: %d width: %d height: %d \n", [emotionName UTF8String], emotion_faces[i].x, emotion_faces[i].y, emotion_faces[i].width, emotion_faces[i].height);
+        }
+        
+        if (emotion_faces.size() > 0) {
+            emotion = [self getEmotion: emotionName];
+        }
+        
+        if (emotion != EmotionNone) {
+            break;
+        }
+        
     }
     
     DetectedEmotion *detectedEmotion = [[DetectedEmotion alloc] initWithFrame:MatToUIImage(frame) emotion:emotion];
     return detectedEmotion;
+}
+
+- (Emotion)getEmotion:(NSString*)emotionName {
+    if ([emotionName isEqual: @"happiness"]) {
+        return EmotionHappiness;
+    } else if ([emotionName isEqual: @"anger"]) {
+        return EmotionAnger;
+    } /*else if ([emotionName isEqual: @"contempt"]) {
+        return EmotionContempt; // NEED TO ADD CONTEMPT
+    }*/ else if ([emotionName isEqual: @"fear"]) {
+        return EmotionFear;
+    } /*else if ([emotionName isEqual: @"neutral"]) {
+        return EmotionNeutral;
+    }*/
+    else if ([emotionName isEqual: @"sadness"]) {
+        return EmotionSadness;
+    } else if ([emotionName isEqual: @"surprise"]) {
+        return EmotionSurprise;
+    } else if ([emotionName isEqual: @"disgust"]) {
+        return EmotionDisgust;
+    }
+    
+    return EmotionNone;
+}
+
+- (CascadeClassifier&)getClassifier:(NSString*)emotionName {
+    if ([emotionName isEqual: @"happiness"]) {
+        return happiness_cascade;
+    } else if ([emotionName isEqual: @"anger"]) {
+        return anger_cascade;
+    } /*else if ([emotionName isEqual: @"contempt"]) {
+       return contempt_cascade; // NEED TO ADD CONTEMPT
+   }*/ else if ([emotionName isEqual: @"fear"]) {
+       return fear_cascade;
+   } /*else if ([emotionName isEqual: @"neutral"]) {
+      return neutral_cascade;
+   }*/else if ([emotionName isEqual: @"sadness"]) {
+       return sadness_cascade;
+   } else if ([emotionName isEqual: @"surprise"]) {
+       return surprise_cascade;
+   } else if ([emotionName isEqual: @"disgust"]) {
+       return disgust_cascade;
+   }
+
 }
 
 - (cv::Point)centerOfEye:(std::vector<cv::Rect>)faces eyes:(std::vector<cv::Rect>)eyes faceNumber:(int)faceNumber eyeNumber:(int)eyeNumber {

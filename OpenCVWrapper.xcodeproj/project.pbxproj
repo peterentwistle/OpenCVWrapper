@@ -42,6 +42,7 @@
 		D0C43F391EAAA30600BD9463 /* neutral.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = neutral.xml; sourceTree = "<group>"; };
 		D0C43F3A1EAAA30600BD9463 /* sadness.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sadness.xml; sourceTree = "<group>"; };
 		D0C43F3B1EAAA30600BD9463 /* surprise.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = surprise.xml; sourceTree = "<group>"; };
+		D0C43F3D1EAAAD6400BD9463 /* disgust.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = disgust.xml; sourceTree = "<group>"; };
 		D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		D0F36DB61E63590D00B7C4DA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		OBJ_12 /* OpenCVWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVWrapperTests.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 				D0C43F371EAAA30600BD9463 /* contempt.xml */,
 				D0C43F381EAAA30600BD9463 /* fear.xml */,
 				D0C43F391EAAA30600BD9463 /* neutral.xml */,
+				D0C43F3D1EAAAD6400BD9463 /* disgust.xml */,
 				D0C43F3A1EAAA30600BD9463 /* sadness.xml */,
 				D0C43F3B1EAAA30600BD9463 /* surprise.xml */,
 				D08C4CBD1E51D35D0042FB30 /* happiness.xml */,

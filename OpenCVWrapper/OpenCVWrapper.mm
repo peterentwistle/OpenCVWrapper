@@ -173,20 +173,19 @@ void rotate90(cv::Mat &mat) {
         return EmotionHappiness;
     } else if ([emotionName isEqual: @"anger"]) {
         return EmotionAnger;
-    } /*else if ([emotionName isEqual: @"contempt"]) {
-       return EmotionContempt; // NEED TO ADD CONTEMPT
-       }*/ else if ([emotionName isEqual: @"fear"]) {
-           return EmotionFear;
-       } /*else if ([emotionName isEqual: @"neutral"]) {
-          return EmotionNeutral;
-          }*/
-       else if ([emotionName isEqual: @"sadness"]) {
-           return EmotionSadness;
-       } else if ([emotionName isEqual: @"surprise"]) {
-           return EmotionSurprise;
-       } else if ([emotionName isEqual: @"disgust"]) {
-           return EmotionDisgust;
-       }
+    } else if ([emotionName isEqual: @"contempt"]) {
+        return EmotionContempt;
+    } else if ([emotionName isEqual: @"fear"]) {
+        return EmotionFear;
+    } else if ([emotionName isEqual: @"neutral"]) {
+        return EmotionNeutral;
+    } else if ([emotionName isEqual: @"sadness"]) {
+        return EmotionSadness;
+    } else if ([emotionName isEqual: @"surprise"]) {
+        return EmotionSurprise;
+    } else if ([emotionName isEqual: @"disgust"]) {
+        return EmotionDisgust;
+    }
     
     return EmotionNone;
 }
@@ -196,19 +195,19 @@ void rotate90(cv::Mat &mat) {
         return happiness_cascade;
     } else if ([emotionName isEqual: @"anger"]) {
         return anger_cascade;
-    } /*else if ([emotionName isEqual: @"contempt"]) {
-       return contempt_cascade; // NEED TO ADD CONTEMPT
-       }*/ else if ([emotionName isEqual: @"fear"]) {
-           return fear_cascade;
-       } /*else if ([emotionName isEqual: @"neutral"]) {
-          return neutral_cascade;
-          }*/else if ([emotionName isEqual: @"sadness"]) {
-              return sadness_cascade;
-          } else if ([emotionName isEqual: @"surprise"]) {
-              return surprise_cascade;
-          } else if ([emotionName isEqual: @"disgust"]) {
-              return disgust_cascade;
-          }
+    } else if ([emotionName isEqual: @"contempt"]) {
+        return contempt_cascade;
+    } else if ([emotionName isEqual: @"fear"]) {
+        return fear_cascade;
+    } else if ([emotionName isEqual: @"neutral"]) {
+        return neutral_cascade;
+    } else if ([emotionName isEqual: @"sadness"]) {
+        return sadness_cascade;
+    } else if ([emotionName isEqual: @"surprise"]) {
+        return surprise_cascade;
+    } else if ([emotionName isEqual: @"disgust"]) {
+        return disgust_cascade;
+    }
     return happiness_cascade;
 }
 

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D04E1C671E5A3B4700989437 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C661E5A3B4700989437 /* opencv2.framework */; };
-		D04E1C691E5A3B7400989437 /* EmotionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C681E5A3B7300989437 /* EmotionCore.framework */; };
 		D04E1C731E5A550200989437 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C721E5A550200989437 /* CoreGraphics.framework */; };
 		D04E1C741E5A553500989437 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C701E5A54EB00989437 /* UIKit.framework */; };
 		D04E1C761E5A5DA400989437 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */; };
+		D0C43F871EAAD0CC00BD9463 /* EmotionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C43F861EAAD0CC00BD9463 /* EmotionCore.framework */; };
 		D0F36DC11E637DD200B7C4DA /* OpenCVWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		OBJ_28 /* OpenCVWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* OpenCVWrapperTests.swift */; };
 		OBJ_30 /* OpenCVWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* OpenCVWrapper.framework */; };
@@ -43,6 +43,7 @@
 		D0C43F3A1EAAA30600BD9463 /* sadness.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sadness.xml; sourceTree = "<group>"; };
 		D0C43F3B1EAAA30600BD9463 /* surprise.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = surprise.xml; sourceTree = "<group>"; };
 		D0C43F3D1EAAAD6400BD9463 /* disgust.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = disgust.xml; sourceTree = "<group>"; };
+		D0C43F861EAAD0CC00BD9463 /* EmotionCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EmotionCore.framework; path = "Packages/EmotionCore-1.0.14/Sources/EmotionCore.framework"; sourceTree = "<group>"; };
 		D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		D0F36DB61E63590D00B7C4DA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		OBJ_12 /* OpenCVWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVWrapperTests.swift; sourceTree = "<group>"; };
@@ -56,9 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				D0C43F871EAAD0CC00BD9463 /* EmotionCore.framework in Frameworks */,
 				D04E1C741E5A553500989437 /* UIKit.framework in Frameworks */,
 				D04E1C731E5A550200989437 /* CoreGraphics.framework in Frameworks */,
-				D04E1C691E5A3B7400989437 /* EmotionCore.framework in Frameworks */,
 				D04E1C671E5A3B4700989437 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +78,7 @@
 		D04E1C651E5A3B4700989437 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0C43F861EAAD0CC00BD9463 /* EmotionCore.framework */,
 				D04E1C721E5A550200989437 /* CoreGraphics.framework */,
 				D04E1C701E5A54EB00989437 /* UIKit.framework */,
 				D04E1C681E5A3B7300989437 /* EmotionCore.framework */,
@@ -277,6 +279,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Packages/OpenCVFramework-1.0.0/Sources",
 					"$(PROJECT_DIR)/Packages/EmotionCore-1.0.3/Sources",
+					"$(PROJECT_DIR)/Packages/EmotionCore-1.0.14/Sources",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -316,6 +319,7 @@
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(PROJECT_DIR)/Packages/OpenCVFramework-1.0.0/Sources",
 					"$(PROJECT_DIR)/Packages/EmotionCore-1.0.3/Sources",
+					"$(PROJECT_DIR)/Packages/EmotionCore-1.0.14/Sources",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

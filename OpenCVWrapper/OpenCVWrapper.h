@@ -22,11 +22,6 @@ typedef struct CvMats *CvMatrix;
 @interface OpenCVWrapper : NSObject
 
 @property (class, nonatomic, assign, readonly) int color_BGR2GRAY;
-//+ (UIImage *)processImageWithOpenCV:(UIImage*)inputImage;
-
-//+ (void)detectFace:(UIImage*)image;
-
-//+ (UIImage *)recognizeFace:(UIImage *)image;
 
 - (DetectedResult *)detectAndDisplay:(UIImage*)input;
 

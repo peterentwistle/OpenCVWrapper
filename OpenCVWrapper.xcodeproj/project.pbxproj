@@ -11,7 +11,6 @@
 		D04E1C691E5A3B7400989437 /* EmotionCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C681E5A3B7300989437 /* EmotionCore.framework */; };
 		D04E1C731E5A550200989437 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C721E5A550200989437 /* CoreGraphics.framework */; };
 		D04E1C741E5A553500989437 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D04E1C701E5A54EB00989437 /* UIKit.framework */; };
-		D04E1C751E5A5D9F00989437 /* MBR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D08C4CBE1E51D35D0042FB30 /* MBR.cpp */; };
 		D04E1C761E5A5DA400989437 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */; };
 		D0F36DC11E637DD200B7C4DA /* OpenCVWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		OBJ_28 /* OpenCVWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* OpenCVWrapperTests.swift */; };
@@ -36,9 +35,13 @@
 		D08C4CBB1E51D35D0042FB30 /* haarcascade_eye_tree_eyeglasses.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_eye_tree_eyeglasses.xml; sourceTree = "<group>"; };
 		D08C4CBC1E51D35D0042FB30 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		D08C4CBD1E51D35D0042FB30 /* happiness.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = happiness.xml; sourceTree = "<group>"; };
-		D08C4CBE1E51D35D0042FB30 /* MBR.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MBR.cpp; sourceTree = "<group>"; };
-		D08C4CBF1E51D35D0042FB30 /* MBR.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MBR.hpp; sourceTree = "<group>"; };
 		D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		D0C43F361EAAA30600BD9463 /* anger.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = anger.xml; sourceTree = "<group>"; };
+		D0C43F371EAAA30600BD9463 /* contempt.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = contempt.xml; sourceTree = "<group>"; };
+		D0C43F381EAAA30600BD9463 /* fear.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = fear.xml; sourceTree = "<group>"; };
+		D0C43F391EAAA30600BD9463 /* neutral.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = neutral.xml; sourceTree = "<group>"; };
+		D0C43F3A1EAAA30600BD9463 /* sadness.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sadness.xml; sourceTree = "<group>"; };
+		D0C43F3B1EAAA30600BD9463 /* surprise.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = surprise.xml; sourceTree = "<group>"; };
 		D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		D0F36DB61E63590D00B7C4DA /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		OBJ_12 /* OpenCVWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVWrapperTests.swift; sourceTree = "<group>"; };
@@ -81,6 +84,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D0C43F3C1EAAA31000BD9463 /* Classifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D08C4CBB1E51D35D0042FB30 /* haarcascade_eye_tree_eyeglasses.xml */,
+				D08C4CBC1E51D35D0042FB30 /* haarcascade_frontalface_alt.xml */,
+				D0C43F361EAAA30600BD9463 /* anger.xml */,
+				D0C43F371EAAA30600BD9463 /* contempt.xml */,
+				D0C43F381EAAA30600BD9463 /* fear.xml */,
+				D0C43F391EAAA30600BD9463 /* neutral.xml */,
+				D0C43F3A1EAAA30600BD9463 /* sadness.xml */,
+				D0C43F3B1EAAA30600BD9463 /* surprise.xml */,
+				D08C4CBD1E51D35D0042FB30 /* happiness.xml */,
+			);
+			name = Classifiers;
+			sourceTree = "<group>";
+		};
 		OBJ_10 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,11 +140,7 @@
 		OBJ_8 /* OpenCVWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				D08C4CBB1E51D35D0042FB30 /* haarcascade_eye_tree_eyeglasses.xml */,
-				D08C4CBC1E51D35D0042FB30 /* haarcascade_frontalface_alt.xml */,
-				D08C4CBD1E51D35D0042FB30 /* happiness.xml */,
-				D08C4CBE1E51D35D0042FB30 /* MBR.cpp */,
-				D08C4CBF1E51D35D0042FB30 /* MBR.hpp */,
+				D0C43F3C1EAAA31000BD9463 /* Classifiers */,
 				D0F36DB51E6356E500B7C4DA /* OpenCVWrapper.h */,
 				D08C4CC11E51D35D0042FB30 /* OpenCVWrapper.mm */,
 				D0F36DB61E63590D00B7C4DA /* module.modulemap */,
@@ -220,7 +235,6 @@
 			buildActionMask = 0;
 			files = (
 				D04E1C761E5A5DA400989437 /* OpenCVWrapper.mm in Sources */,
-				D04E1C751E5A5D9F00989437 /* MBR.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

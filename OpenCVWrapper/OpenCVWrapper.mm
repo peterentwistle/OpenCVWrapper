@@ -31,11 +31,11 @@ CascadeClassifier disgust_cascade;
 //cv::CascadeClassifier cascade;
 
 typedef struct VectorOfCvRects {
-	std::vector<cv::Rect> val = *new std::vector<cv::Rect>();
+    std::vector<cv::Rect> val = *new std::vector<cv::Rect>();
 } *VectorOfCvRect;
 
 typedef struct CvMats {
-	cv::Mat val;
+    cv::Mat val;
 } *CvMatrix;
 
 - (id)init {
@@ -43,7 +43,7 @@ typedef struct CvMats {
     
     // Load face cascade
     [self loadCascadeClassifier: face_cascade fileName:@"haarcascade_frontalface_alt"];
-
+    
     // Load eye cascade
     [self loadCascadeClassifier: eyes_cascade fileName:@"haarcascade_eye_tree_eyeglasses"];
     
@@ -66,7 +66,7 @@ typedef struct CvMats {
     
     // Sadness
     [self loadCascadeClassifier: sadness_cascade fileName:@"sadness"];
-
+    
     // Surprise
     [self loadCascadeClassifier: surprise_cascade fileName:@"surprise"];
     
@@ -89,7 +89,7 @@ void rotate90(cv::Mat &mat) {
     string cascadePath = (char *)[path UTF8String];
     
     if (!cascade.load(cascadePath)) {
-        return nil;
+        return;
     }
 }
 
@@ -139,7 +139,7 @@ void rotate90(cv::Mat &mat) {
 
 - (DetectedEmotion *)detectEmotion:(Mat)frame {
     std::vector<cv::Rect> emotion_faces;
-
+    
     Emotion emotion = EmotionNone;
     
     NSArray *emotions = @[@"happiness", @"anger", @"contempt", @"fear", @"neutral", @"sadness", @"surprise", @"disgust"];
@@ -174,19 +174,19 @@ void rotate90(cv::Mat &mat) {
     } else if ([emotionName isEqual: @"anger"]) {
         return EmotionAnger;
     } /*else if ([emotionName isEqual: @"contempt"]) {
-        return EmotionContempt; // NEED TO ADD CONTEMPT
-    }*/ else if ([emotionName isEqual: @"fear"]) {
-        return EmotionFear;
-    } /*else if ([emotionName isEqual: @"neutral"]) {
-        return EmotionNeutral;
-    }*/
-    else if ([emotionName isEqual: @"sadness"]) {
-        return EmotionSadness;
-    } else if ([emotionName isEqual: @"surprise"]) {
-        return EmotionSurprise;
-    } else if ([emotionName isEqual: @"disgust"]) {
-        return EmotionDisgust;
-    }
+       return EmotionContempt; // NEED TO ADD CONTEMPT
+       }*/ else if ([emotionName isEqual: @"fear"]) {
+           return EmotionFear;
+       } /*else if ([emotionName isEqual: @"neutral"]) {
+          return EmotionNeutral;
+          }*/
+       else if ([emotionName isEqual: @"sadness"]) {
+           return EmotionSadness;
+       } else if ([emotionName isEqual: @"surprise"]) {
+           return EmotionSurprise;
+       } else if ([emotionName isEqual: @"disgust"]) {
+           return EmotionDisgust;
+       }
     
     return EmotionNone;
 }
@@ -198,18 +198,18 @@ void rotate90(cv::Mat &mat) {
         return anger_cascade;
     } /*else if ([emotionName isEqual: @"contempt"]) {
        return contempt_cascade; // NEED TO ADD CONTEMPT
-   }*/ else if ([emotionName isEqual: @"fear"]) {
-       return fear_cascade;
-   } /*else if ([emotionName isEqual: @"neutral"]) {
-      return neutral_cascade;
-   }*/else if ([emotionName isEqual: @"sadness"]) {
-       return sadness_cascade;
-   } else if ([emotionName isEqual: @"surprise"]) {
-       return surprise_cascade;
-   } else if ([emotionName isEqual: @"disgust"]) {
-       return disgust_cascade;
-   }
-
+       }*/ else if ([emotionName isEqual: @"fear"]) {
+           return fear_cascade;
+       } /*else if ([emotionName isEqual: @"neutral"]) {
+          return neutral_cascade;
+          }*/else if ([emotionName isEqual: @"sadness"]) {
+              return sadness_cascade;
+          } else if ([emotionName isEqual: @"surprise"]) {
+              return surprise_cascade;
+          } else if ([emotionName isEqual: @"disgust"]) {
+              return disgust_cascade;
+          }
+    return happiness_cascade;
 }
 
 - (cv::Point)centerOfEye:(std::vector<cv::Rect>)faces eyes:(std::vector<cv::Rect>)eyes faceNumber:(int)faceNumber eyeNumber:(int)eyeNumber {
@@ -224,7 +224,7 @@ void rotate90(cv::Mat &mat) {
     Mat frame;
     
     UIImageToMat(input, frame);
-
+    
     //if (frame.refcount == 0) break;
     
     cvtColor(frame, frame_gray, COLOR_BGR2GRAY);
@@ -250,15 +250,15 @@ void rotate90(cv::Mat &mat) {
 }
 
 + (void)UIImageToMat:(UIImage*)input frame:(CvMats*)frame {
-	UIImageToMat(input, frame->val);
+    UIImageToMat(input, frame->val);
 }
 
 + (void)cvtColor:(CvMats*)input output:(CvMats*)output color:(int)color {
-	cvtColor(input->val, output->val, color);
+    cvtColor(input->val, output->val, color);
 }
 
 + (void)equalizeHist:(CvMats*)input output:(CvMats*)output {
-	equalizeHist(input->val, output->val);
+    equalizeHist(input->val, output->val);
 }
 
 @end

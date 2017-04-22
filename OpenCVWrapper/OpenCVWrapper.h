@@ -23,7 +23,7 @@ typedef struct CvMats *CvMatrix;
 
 @property (class, nonatomic, assign, readonly) int color_BGR2GRAY;
 
-- (DetectedResult *)detectAndDisplay:(UIImage*)input;
+- (DetectedResult *)detectAndDisplay:(UIImage*)input posNegMode:(BOOL)posNegMode;
 
 + (void)UIImageToMat:(UIImage*)input frame:(CvMatrix*)frame;
 

@@ -27,8 +27,8 @@ CascadeClassifier neutral_cascade;
 CascadeClassifier sadness_cascade;
 CascadeClassifier surprise_cascade;
 CascadeClassifier disgust_cascade;
-
-//cv::CascadeClassifier cascade;
+CascadeClassifier positive_cascade;
+CascadeClassifier negative_cascade;
 
 typedef struct VectorOfCvRects {
     std::vector<cv::Rect> val = *new std::vector<cv::Rect>();
@@ -73,6 +73,11 @@ typedef struct CvMats {
     // Disgust
     [self loadCascadeClassifier: disgust_cascade fileName:@"disgust"];
     
+    // Positive
+    [self loadCascadeClassifier: positive_cascade fileName:@"positive"];
+    
+    // Negative
+    [self loadCascadeClassifier: negative_cascade fileName:@"negative"];
     return self;
 }
 
@@ -93,7 +98,7 @@ void rotate90(cv::Mat &mat) {
     }
 }
 
-- (DetectedResult *)detectAndDisplay:(UIImage*)input {
+- (DetectedResult *)detectAndDisplay:(UIImage*)input posNegMode:(BOOL)posNegMode {
     std::vector<cv::Rect> faces;
     Mat frame_gray;
     Mat frame;
@@ -119,7 +124,7 @@ void rotate90(cv::Mat &mat) {
         std::vector<cv::Rect> eyes;
         
         // Detect emotions
-        detectedEmotion = [self detectEmotion:faceROI];
+        detectedEmotion = [self detectEmotion:faceROI posNegMode:posNegMode];
         
         // In each face, detect eyes
         eyes_cascade.detectMultiScale(faceROI, eyes, 1.1, 2, 0 |CASCADE_SCALE_IMAGE, cv::Size(30, 30));
@@ -137,12 +142,18 @@ void rotate90(cv::Mat &mat) {
     return result;
 }
 
-- (DetectedEmotion *)detectEmotion:(Mat)frame {
+- (DetectedEmotion *)detectEmotion:(Mat)frame posNegMode:(BOOL)posNegMode {
     std::vector<cv::Rect> emotion_faces;
     
     Emotion emotion = EmotionNone;
     
-    NSArray *emotions = @[@"happiness", @"anger", @"contempt", @"fear", @"neutral", @"sadness", @"surprise", @"disgust"];
+    NSArray *emotions;
+    
+    if (posNegMode) {
+        emotions = @[@"positive", @"neutral", @"negative"];
+    } else {
+        emotions = @[@"happiness", @"anger", @"contempt", @"fear", @"neutral", @"sadness", @"surprise", @"disgust"];
+    }
     
     for (NSString *emotionName in emotions) {
         
@@ -185,6 +196,10 @@ void rotate90(cv::Mat &mat) {
         return EmotionSurprise;
     } else if ([emotionName isEqual: @"disgust"]) {
         return EmotionDisgust;
+    } else if ([emotionName isEqual: @"positive"]) {
+        return EmotionPositive;
+    } else if ([emotionName isEqual: @"negative"]) {
+        return EmotionNegative;
     }
     
     return EmotionNone;
@@ -207,7 +222,12 @@ void rotate90(cv::Mat &mat) {
         return surprise_cascade;
     } else if ([emotionName isEqual: @"disgust"]) {
         return disgust_cascade;
+    } else if ([emotionName isEqual: @"positive"]) {
+        return positive_cascade;
+    } else if ([emotionName isEqual: @"negative"]) {
+        return negative_cascade;
     }
+    
     return happiness_cascade;
 }
 
